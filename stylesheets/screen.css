@@ -313,6 +313,7 @@ blockquote + p em {
 /* line 219, ../sass/screen.scss */
 .inspiration .grid {
   margin: 0px auto;
+  display: none;
 }
 /* line 222, ../sass/screen.scss */
 .inspiration .grid .wordpress {

@@ -32,8 +32,8 @@
 	$.get( "<?php echo get_template_directory_uri(); ?>/tweets.php", function( data ) {
 		tweets = JSON.parse(data);
 		console.log( tweets );
-		$.get( "http://api.tumblr.com/v2/blog/modderpoel.tumblr.com/posts/photo?limit=50&api_key=<?php echo $tupublic; ?>", function( data ) {
-			posts = data.response.posts;
+		$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs.php", function( data ) {
+			posts = JSON.parse(data).response.posts;
 			console.log( posts );
 			displayPosts();
 		});
@@ -60,7 +60,7 @@
 				}
 			}
 		}
-		$('.grid').isotope({
+		$('.grid').fadeIn(1000).isotope({
 			itemSelector: '.post',
     	getSortData : {
         date : function ( $elem ) {
