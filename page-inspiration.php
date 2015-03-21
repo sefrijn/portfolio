@@ -60,7 +60,7 @@
 				}
 			}
 		}
-		$('.grid').fadeIn().isotope({
+		$('.grid').isotope({
 			itemSelector: '.post',
     	getSortData : {
         date : function ( $elem ) {
