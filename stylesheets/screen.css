@@ -319,7 +319,11 @@ blockquote + p em {
 .inspiration .grid .wordpress {
   height: 470px;
 }
-/* line 226, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
+.inspiration .grid .wordpress h3 {
+  margin-top: 56px;
+}
+/* line 229, ../sass/screen.scss */
 .inspiration .tweet {
   width: 300px !important;
   height: 130px !important;
@@ -328,13 +332,14 @@ blockquote + p em {
   font-weight: 400 !important;
   line-height: 26px;
 }
-/* line 238, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .inspiration .tweet img {
   display: block;
   margin-right: 10px;
   margin-bottom: 10px;
+  opacity: 0.1;
 }
-/* line 244, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .inspiration .tumblr {
   width: 130px !important;
   height: 130px !important;
@@ -347,15 +352,15 @@ blockquote + p em {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 255, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .inspiration .tumblr:hover {
   border-color: #ebebeb;
 }
-/* line 257, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .inspiration .tumblr:hover a {
   opacity: 1;
 }
-/* line 261, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .inspiration .tumblr img {
   position: absolute;
   top: 50%;
@@ -363,7 +368,7 @@ blockquote + p em {
   left: 50%;
   margin-left: -8px;
 }
-/* line 268, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .inspiration .tumblr a {
   display: block;
   width: 100%;
@@ -373,7 +378,7 @@ blockquote + p em {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 276, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 .inspiration .tumblr a span {
   width: 100%;
   left: 0;
@@ -388,17 +393,17 @@ blockquote + p em {
   letter-spacing: 2px;
   line-height: 20px;
 }
-/* line 292, ../sass/screen.scss */
+/* line 296, ../sass/screen.scss */
 .inspiration .tumblr-wide {
   width: 300px !important;
 }
-/* line 295, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 .inspiration .tumblr-large {
   width: 300px !important;
   height: 300px !important;
 }
 
-/* line 302, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 hr {
   clear: both;
   border: none;
@@ -406,7 +411,7 @@ hr {
   margin-bottom: 25px;
 }
 
-/* line 308, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 .wp-caption-text {
   padding: 0px !important;
   width: 470px;
@@ -422,7 +427,7 @@ hr {
   line-height: 20px;
 }
 
-/* line 322, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .alignleft {
   background-color: #000000;
   position: relative;
@@ -431,14 +436,14 @@ hr {
   margin-right: 10px;
   margin-bottom: 20px;
 }
-/* line 329, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 .alignleft img {
   width: 470px;
   height: auto;
   margin-bottom: -5px;
 }
 
-/* line 335, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 .alignright {
   display: inline-block;
   background-color: #000000;
@@ -448,26 +453,26 @@ hr {
   margin-left: 10px;
   margin-bottom: 20px;
 }
-/* line 343, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 .alignright img {
   width: 470px;
   height: auto;
   margin-bottom: -5px;
 }
 
-/* line 349, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 .alignnone {
   width: 960px;
   height: auto;
   margin: 8px 0px;
 }
 
-/* line 355, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 .scroll_down {
   position: relative;
 }
 
-/* line 358, ../sass/screen.scss */
+/* line 362, ../sass/screen.scss */
 .scroll_down:hover {
   /* Chrome, Safari, Opera */
   -webkit-animation-name: myfirst;
@@ -483,12 +488,12 @@ hr {
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
-  /* line 377, ../sass/screen.scss */
+  /* line 381, ../sass/screen.scss */
   from {
     top: 0px;
   }
 
-  /* line 378, ../sass/screen.scss */
+  /* line 382, ../sass/screen.scss */
   to {
     top: 5px;
   }
@@ -496,18 +501,18 @@ hr {
 
 /* Standard syntax */
 @keyframes myfirst {
-  /* line 383, ../sass/screen.scss */
+  /* line 387, ../sass/screen.scss */
   from {
     top: 0px;
   }
 
-  /* line 384, ../sass/screen.scss */
+  /* line 388, ../sass/screen.scss */
   to {
     top: 5px;
   }
 }
 
-/* line 387, ../sass/screen.scss */
+/* line 391, ../sass/screen.scss */
 footer {
   padding: 40px;
   text-transform: uppercase;
@@ -517,7 +522,7 @@ footer {
   text-align: center;
 }
 
-/* line 397, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 #attachment_86 {
   margin-right: 30px;
 }

@@ -221,6 +221,9 @@ blockquote + p em{
 		display:none;
 		.wordpress{
 			height:470px;
+			h3{
+				margin-top:56px;
+			}
 		}
 	}
 	.tweet{
@@ -239,6 +242,7 @@ blockquote + p em{
 			display: block;
 			margin-right:10px;
 			margin-bottom:10px;
+			opacity: 0.1;
 		}
 	}
 	.tumblr{
