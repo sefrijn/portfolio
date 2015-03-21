@@ -1,0 +1,318 @@
+/*
+Theme Name: Videodock
+Theme URI: http://www.videodock.com/
+Author: Sefrijn
+Author URI: http://www.sefrijn.nl/
+Description:Custom made theme for Videodock.
+Version: 0.1
+Tags: online, video, experience
+Text Domain: Videodock
+
+*/
+
+@import "compass/reset";
+@import "compass/css3";
+
+body{
+	font-family: 'Josefin Sans';
+	font-size:18px;
+	font-weight:400;
+}
+p{
+	line-height:26px;
+	margin-bottom:15px;
+	margin-top:15px;
+}
+
+h1{
+	font-size:40px;
+	font-weight:300;
+}
+a{
+	// letter-spacing:1px;
+	color:#333333;
+	font-weight:700;
+	text-decoration:none;
+	&:hover{
+		color:#333333;
+		text-decoration: underline;
+	}
+}
+
+h2{
+
+}
+
+h3{
+	font-size:24px;
+	font-weight:400;
+}
+blockquote{
+	margin-top:30px;
+	border:1px solid #eeeeee;
+	padding:30px;
+	position:relative;
+	span{
+		font-family: 'Georgia';
+		position:absolute;
+		font-size:50px;		
+	}
+	span:nth-of-type(1){
+		left:150px;
+		top:30px;
+		}
+	span:nth-of-type(2){
+		bottom:30px;
+		right:150px;
+	}
+}
+blockquote + p em{
+	position: relative;
+	top:-28px;
+	text-transform: uppercase;
+	font-size:13px;
+	letter-spacing:2px;
+	color:#aaaaaa;
+	background-color:#ffffff;
+	padding:20px;	
+}
+
+.subtitle{
+	text-transform: uppercase;
+	font-size:13px;
+	letter-spacing:2px;
+	color:#aaaaaa;
+	line-height:20px;
+}
+
+#site_title{
+	text-align:center;
+	margin:20px 30px 68px;
+	a{
+		font-weight: 300 !important;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+.navigation{
+	position:absolute;
+	top:70px;
+	width:100%;
+	ul{
+		text-align:center;
+		li{
+			display:inline;
+			a{
+				display: inline-block;
+				padding: 20px;
+				color:#333333;
+				text-decoration: none;
+				&:hover{
+					background-color:#333333;
+					color:#dddddd;
+				}
+			}
+		}
+		.current-menu-item{
+			a{
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.fixed{
+	position:fixed;
+	top:0px;
+	background-color: #ffffff;
+	z-index:10;
+}
+
+.grid{
+	width:100%;
+	text-align:center;
+	font-size:0;
+	.post{
+		color:#333333;
+		text-decoration: none;
+		vertical-align: top;
+		font-size:18px;
+		width:300px;
+		padding:20px;
+		display:inline-block;
+		text-align: center;
+		h3{
+			margin-top:20px;
+			margin-bottom:20px;
+		}
+		&:hover{
+			background-color:#ebebeb;
+		}
+		.subtitle{
+			font-weight:400 !important;
+		}
+	}
+}
+
+#page{
+	// a comment
+	header{
+		margin:0px auto 30px;
+		max-width:860px;
+		text-align: center;
+		height:100px;
+		color:#ffffff;
+		padding:150px 50px;
+		h1{
+			font-size:80px;
+			margin-bottom:30px;
+		}
+		.subtitle{
+			color:#ffffff;
+		}
+	}
+	.spacer{
+		height:20px;
+	}
+	h3{
+		padding:20px 200px;
+	}
+	.wrapper{
+		.container{
+			margin:0px auto;
+			width:960px;
+			p{
+				padding:0 200px;
+				iframe{
+					margin-top:15px;
+					margin-bottom:-5px;
+					margin-left:-200px;
+				}
+				iframe.soundcloud{
+					margin-left:0px;
+				}
+			}
+		}
+	}
+}
+.cv{
+	h3{
+		margin-left:150px !important;
+		padding: 0px !important;
+		float:left;
+	}
+	p{
+		padding-left:420px !important;
+		text-transform: uppercase;
+		font-size:13px;
+		letter-spacing:2px;
+		color:#aaaaaa;
+	}
+	ul{
+		padding-left:420px !important;
+		li{
+			margin:6px 0px;
+		}	
+	}
+}
+
+
+
+hr{
+	clear:both;
+	border:none;
+	height: 0px;
+	margin-bottom:25px
+}
+.wp-caption-text{
+	padding:0px !important;
+	width:470px;
+	text-align:center;
+	display:none;
+	position:absolute;
+	top:50%;
+	margin-top:-15px;
+	color:#ffffff;
+	text-transform: uppercase;
+	font-size:13px;
+	letter-spacing:2px;
+	line-height:20px;	
+}
+.alignleft{
+	background-color:#000000;
+	position:relative;
+	width:470px !important;
+	float:left;
+	margin-right:10px;
+	margin-bottom:20px;
+	img{
+		width:470px;
+		height:auto;
+		margin-bottom:-5px;
+	}
+}
+.alignright{
+	display:inline-block;
+	background-color:#000000;
+	position:relative;
+	width:470px !important;
+	float:right;
+	margin-left:10px;
+	margin-bottom:20px;	
+	img{
+		width:470px;
+		height:auto;
+		margin-bottom:-5px;		
+	}
+}
+.alignnone{
+	width:960px;
+	height:auto;
+	margin:8px 0px;
+}
+
+.scroll_down{
+	position:relative;
+}
+.scroll_down:hover{
+   	/* Chrome, Safari, Opera */
+    -webkit-animation-name: myfirst;
+    -webkit-animation-duration: 0.3s;
+    // -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    // -webkit-animation-play-state: running;
+    /* Standard syntax */
+    animation-name: myfirst;
+    animation-duration: 0.3s;
+    // animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    // animation-play-state: running;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {top: 0px;}
+    to {top: 5px;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {top: 0px;}
+    to {top: 5px;}
+}
+
+footer{
+	padding:40px;
+	text-transform: uppercase;
+	font-size:13px;
+	letter-spacing:2px;
+	color:#aaaaaa;	
+	text-align: center;
+}
+
+// Who page image fix
+#attachment_86{
+	margin-right:30px;
+}

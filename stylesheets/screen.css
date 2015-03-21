@@ -1,0 +1,435 @@
+/*
+Theme Name: Videodock
+Theme URI: http://www.videodock.com/
+Author: Sefrijn
+Author URI: http://www.sefrijn.nl/
+Description:Custom made theme for Videodock.
+Version: 0.1
+Tags: online, video, experience
+Text Domain: Videodock
+
+*/
+/* line 17, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Users/sefrijn/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 16, ../sass/screen.scss */
+body {
+  font-family: 'Josefin Sans';
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* line 21, ../sass/screen.scss */
+p {
+  line-height: 26px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+/* line 27, ../sass/screen.scss */
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+}
+
+/* line 31, ../sass/screen.scss */
+a {
+  color: #333333;
+  font-weight: 700;
+  text-decoration: none;
+}
+/* line 36, ../sass/screen.scss */
+a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+
+/* line 46, ../sass/screen.scss */
+h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* line 50, ../sass/screen.scss */
+blockquote {
+  margin-top: 30px;
+  border: 1px solid #eeeeee;
+  padding: 30px;
+  position: relative;
+}
+/* line 55, ../sass/screen.scss */
+blockquote span {
+  font-family: 'Georgia';
+  position: absolute;
+  font-size: 50px;
+}
+/* line 60, ../sass/screen.scss */
+blockquote span:nth-of-type(1) {
+  left: 150px;
+  top: 30px;
+}
+/* line 64, ../sass/screen.scss */
+blockquote span:nth-of-type(2) {
+  bottom: 30px;
+  right: 150px;
+}
+
+/* line 69, ../sass/screen.scss */
+blockquote + p em {
+  position: relative;
+  top: -28px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/* line 80, ../sass/screen.scss */
+.subtitle {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+  line-height: 20px;
+}
+
+/* line 88, ../sass/screen.scss */
+#site_title {
+  text-align: center;
+  margin: 20px 30px 68px;
+}
+/* line 91, ../sass/screen.scss */
+#site_title a {
+  font-weight: 300 !important;
+}
+/* line 93, ../sass/screen.scss */
+#site_title a:hover {
+  text-decoration: none;
+}
+
+/* line 98, ../sass/screen.scss */
+.navigation {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+}
+/* line 102, ../sass/screen.scss */
+.navigation ul {
+  text-align: center;
+}
+/* line 104, ../sass/screen.scss */
+.navigation ul li {
+  display: inline;
+}
+/* line 106, ../sass/screen.scss */
+.navigation ul li a {
+  display: inline-block;
+  padding: 20px;
+  color: #333333;
+  text-decoration: none;
+}
+/* line 111, ../sass/screen.scss */
+.navigation ul li a:hover {
+  background-color: #333333;
+  color: #dddddd;
+}
+/* line 118, ../sass/screen.scss */
+.navigation ul .current-menu-item a {
+  text-decoration: underline;
+}
+
+/* line 124, ../sass/screen.scss */
+.fixed {
+  position: fixed;
+  top: 0px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+/* line 131, ../sass/screen.scss */
+.grid {
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+}
+/* line 135, ../sass/screen.scss */
+.grid .post {
+  color: #333333;
+  text-decoration: none;
+  vertical-align: top;
+  font-size: 18px;
+  width: 300px;
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+}
+/* line 144, ../sass/screen.scss */
+.grid .post h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 148, ../sass/screen.scss */
+.grid .post:hover {
+  background-color: #ebebeb;
+}
+/* line 151, ../sass/screen.scss */
+.grid .post .subtitle {
+  font-weight: 400 !important;
+}
+
+/* line 159, ../sass/screen.scss */
+#page header {
+  margin: 0px auto 30px;
+  max-width: 860px;
+  text-align: center;
+  height: 100px;
+  color: #ffffff;
+  padding: 150px 50px;
+}
+/* line 166, ../sass/screen.scss */
+#page header h1 {
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+/* line 170, ../sass/screen.scss */
+#page header .subtitle {
+  color: #ffffff;
+}
+/* line 174, ../sass/screen.scss */
+#page .spacer {
+  height: 20px;
+}
+/* line 177, ../sass/screen.scss */
+#page h3 {
+  padding: 20px 200px;
+}
+/* line 181, ../sass/screen.scss */
+#page .wrapper .container {
+  margin: 0px auto;
+  width: 960px;
+}
+/* line 184, ../sass/screen.scss */
+#page .wrapper .container p {
+  padding: 0 200px;
+}
+/* line 186, ../sass/screen.scss */
+#page .wrapper .container p iframe {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  margin-left: -200px;
+}
+/* line 191, ../sass/screen.scss */
+#page .wrapper .container p iframe.soundcloud {
+  margin-left: 0px;
+}
+
+/* line 199, ../sass/screen.scss */
+.cv h3 {
+  margin-left: 150px !important;
+  padding: 0px !important;
+  float: left;
+}
+/* line 204, ../sass/screen.scss */
+.cv p {
+  padding-left: 420px !important;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+}
+/* line 211, ../sass/screen.scss */
+.cv ul {
+  padding-left: 420px !important;
+}
+/* line 213, ../sass/screen.scss */
+.cv ul li {
+  margin: 6px 0px;
+}
+
+/* line 221, ../sass/screen.scss */
+hr {
+  clear: both;
+  border: none;
+  height: 0px;
+  margin-bottom: 25px;
+}
+
+/* line 227, ../sass/screen.scss */
+.wp-caption-text {
+  padding: 0px !important;
+  width: 470px;
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+
+/* line 241, ../sass/screen.scss */
+.alignleft {
+  background-color: #000000;
+  position: relative;
+  width: 470px !important;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+/* line 248, ../sass/screen.scss */
+.alignleft img {
+  width: 470px;
+  height: auto;
+  margin-bottom: -5px;
+}
+
+/* line 254, ../sass/screen.scss */
+.alignright {
+  display: inline-block;
+  background-color: #000000;
+  position: relative;
+  width: 470px !important;
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+/* line 262, ../sass/screen.scss */
+.alignright img {
+  width: 470px;
+  height: auto;
+  margin-bottom: -5px;
+}
+
+/* line 268, ../sass/screen.scss */
+.alignnone {
+  width: 960px;
+  height: auto;
+  margin: 8px 0px;
+}
+
+/* line 274, ../sass/screen.scss */
+.scroll_down {
+  position: relative;
+}
+
+/* line 277, ../sass/screen.scss */
+.scroll_down:hover {
+  /* Chrome, Safari, Opera */
+  -webkit-animation-name: myfirst;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  /* Standard syntax */
+  animation-name: myfirst;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+  /* line 296, ../sass/screen.scss */
+  from {
+    top: 0px;
+  }
+
+  /* line 297, ../sass/screen.scss */
+  to {
+    top: 5px;
+  }
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  /* line 302, ../sass/screen.scss */
+  from {
+    top: 0px;
+  }
+
+  /* line 303, ../sass/screen.scss */
+  to {
+    top: 5px;
+  }
+}
+
+/* line 306, ../sass/screen.scss */
+footer {
+  padding: 40px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+  text-align: center;
+}
+
+/* line 316, ../sass/screen.scss */
+#attachment_86 {
+  margin-right: 30px;
+}
