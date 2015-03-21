@@ -50,12 +50,12 @@
 				var d = new Date(posts[i].date);
 				var date = d.toLocaleDateString();
 				if(Math.random() > 0.7 && posts[i].photos[j].alt_sizes[2].height > 350){
-					$('.grid').append('<div class="post tumblr tumblr-large" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><span>Tumblr post<span></a></div>');
+					$('.grid').append('<div class="post tumblr tumblr-large" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
 				}else{
 					if(posts[i].photos[j].alt_sizes[2].height <200){
-						$('.grid').append('<div class="post tumblr tumblr-wide" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><span>Tumblr post<span></a></div>');
+						$('.grid').append('<div class="post tumblr tumblr-wide" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
 					}else{
-						$('.grid').append('<div class="post tumblr" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><span>Tumblr post<span></a></div>');
+						$('.grid').append('<div class="post tumblr" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
 					}
 				}
 			}

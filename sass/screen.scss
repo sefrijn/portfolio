@@ -258,6 +258,13 @@ blockquote + p em{
 				opacity: 1;
 			}
 		}
+		img{
+			position:absolute;
+			top:50%;
+			margin-top:-36px;
+			left:50%;
+			margin-left:-8px;
+		}
 		a{
 			display: block;
 			width:100%;
