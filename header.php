@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="description" content="I use technology, curiosity, meditation and play to shape and create interactive creations, vibrations and experiences.">
-	<meta name="og:description" content="I use technology, curiosity, meditation and play to shape and create interactive creations, vibrations and experiences.">
+	<meta name="description" content="Sefrijn uses technology, curiosity, meditation and play to make interactive creations, vibrations and experiences.">
+	<meta name="og:description" content="Sefrijn uses technology, curiosity, meditation and play to make interactive creations, vibrations and experiences.">
 	<meta name="og:site_name" content="Work by Sefrijn">
-	<meta name="og:title" content="Sefrijn - Antidisciplinairy Artist">
-	<meta name="keywords" content="Technology,Design,Art,Code,Interactive,Interactive Installation,Creativity">
+	<meta name="og:title" content="Sefrijn - Creations, vibrations and experiences">
+	<meta name="keywords" content="Technology,Design,Art,Code,Music,Interactive,Interactive Installation,Creativity">
 	<meta name="author" content="Sefrijn">
 	<meta property="og:image" content="http://www.sefrijn.nl/wp-content/uploads/2015/02/IMG_0782-1024x472.jpg" />
-	<title>Sefrijn - Antidisciplinairy Artist</title>
+	<title>Sefrijn - Creations, vibrations and experiences</title>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.2.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/type.js"></script>

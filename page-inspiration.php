@@ -8,7 +8,14 @@
 	require("lib/settings.php");
 ?>
 <div class="page inspiration">
-
+	<div id="filter">
+		<ul class="subtitle">
+			<li class="active" data-filter="all">All</li>
+			<li data-filter="wordpress">Sefrijn.nl</li>
+			<li data-filter="tumblr">Tumblr</li>
+			<li data-filter="tweet">Twitter</li>
+		</ul>
+	</div>
 	<div class="grid">
 			<?php 
 			$pages = query_posts('post_type=post');

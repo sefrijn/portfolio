@@ -216,6 +216,24 @@ blockquote + p em{
 	}
 }
 .inspiration{
+	#filter{
+		text-align: center;
+		margin:0px auto;
+		width:960px;
+		li{
+			display:inline-block;	
+			padding:10px;
+			border:1px solid #ffffff;
+			&:hover{
+				cursor:pointer;
+				border-color:#eeeeee;
+			}
+		}
+		li.active{
+			text-decoration: underline;
+		}
+		
+	}
 	.grid{
 		margin: 0px auto;
 		display:none;

@@ -6,6 +6,23 @@ $( document ).ready(function() {
 		});
 	});
 
+	$('#filter li').click(function(){
+		var selected = "."+$(this).attr('data-filter');
+		$('#filter li').removeClass('active');
+		$(this).addClass('active');
+		if(selected != ".all"){	
+			$('.post').hide();
+			$(selected).show();
+			$('.grid').isotope();
+			console.log($(this).attr('data-filter'));
+		}else{
+			$('.post').show();
+			$('.grid').isotope();
+			console.log($(this).attr('data-filter'));
+		}
+
+	})
+
 	$('.alignleft, .alignright').hover(function(){
 		var it = $(this);
 		it.children('img').fadeTo( 200 , 0.4,function(){
