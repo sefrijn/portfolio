@@ -42,13 +42,14 @@
 	function displayPosts(){
 		for(var i = 0; i < tweets.length; i++){
 			var d = new Date(tweets[i].created_at);
-			var date = d.toLocaleDateString();
+			// var date = d.toLocaleDateString();
+			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
 			$('.grid').append('<a target="_blank" class="post tweet" href="https://twitter.com/sefrijn/status/'+tweets[i].id_str+'" data-date="'+date+'"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png">'+tweets[i].text+'</a>');		
 		}
 		for(var i = 0; i < posts.length; i++){
 			for(var j = 0; j < posts[i].photos.length; j++){
 				var d = new Date(posts[i].date);
-				var date = d.toLocaleDateString();
+				var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
 				if(Math.random() > 0.7 && posts[i].photos[j].alt_sizes[2].height > 350){
 					$('.grid').append('<div class="post tumblr tumblr-large" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
 				}else{
