@@ -3,7 +3,7 @@
  * @package Sefrijn
  */
 
-	get_header();
+	get_header('pages');
 ?>
 <div id="page">
 	<?php if (have_posts()) : ?>
