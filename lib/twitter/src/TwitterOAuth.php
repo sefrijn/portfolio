@@ -263,22 +263,22 @@ class TwitterOAuth extends Config
     private function uploadMediaChunked($path, $parameters)
     {
         // Init
-        $init = $this->http('POST', self::UPLOAD_HOST, $path, [
+        $init = $this->http('POST', self::UPLOAD_HOST, $path, array(
             'command' => 'INIT',
             'media_type' => $parameters['media_type'],
             'total_bytes' => filesize($parameters['media'])
-        ]);
+        ));
         // Append
         $segment_index = 0;
         $media = fopen($parameters['media'], 'rb');
         while (!feof($media))
         {
-            $this->http('POST', self::UPLOAD_HOST, 'media/upload', [
+            $this->http('POST', self::UPLOAD_HOST, 'media/upload', array(
                 'command' => 'APPEND',
                 'media_id' => $init->media_id_string,
                 'segment_index' => $segment_index++,
                 'media' => base64_encode(fread($media, self::UPLOAD_CHUNK))
-            ]);
+            ));
         }
         fclose($media);
         // Finalize
@@ -386,7 +386,7 @@ class TwitterOAuth extends Config
                 break;
         }
 
-        if (in_array($method, ['GET', 'PUT', 'DELETE']) && !empty($postfields)) {
+        if (in_array($method, array('GET', 'PUT', 'DELETE')) && !empty($postfields)) {
             $options[CURLOPT_URL] .= '?' . Util::buildHttpQuery($postfields);
         }
 
