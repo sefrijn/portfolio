@@ -14,7 +14,17 @@
 			<li data-filter="wordpress">Sefrijn.nl</li>
 			<li data-filter="tumblr">Tumblr</li>
 			<li data-filter="tweet">Twitter</li>
+			<li data-filter="instagram">Instagram</li>
 		</ul>
+	</div>
+	<div class="loading">
+		<div class="sk-folding-cube">
+			<div class="sk-cube1 sk-cube"></div>
+			<div class="sk-cube2 sk-cube"></div>
+			<div class="sk-cube4 sk-cube"></div>
+			<div class="sk-cube3 sk-cube"></div>
+		</div>
+		<p>loading...</p>
 	</div>
 	<div class="grid">
 			<?php 
@@ -35,40 +45,71 @@
 	</div>
 	<script>
 	var tweets;
-	var posts;
+	var tumblr_posts;
+	var tumblr_video;
+	var insta;
 	$.get( "<?php echo get_template_directory_uri(); ?>/tweets.php", function( data ) {
 		tweets = JSON.parse(data);
 		console.log( tweets );
-		$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs.php", function( data ) {
-			posts = JSON.parse(data).response.posts;
-			console.log( posts );
-			displayPosts();
+		$.get( "<?php echo get_template_directory_uri(); ?>/instagrams.php", function( data ) {
+			insta = JSON.parse(data);
+			console.log( insta );
+			$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs.php", function( data ) {
+				tumblr_posts = JSON.parse(data).response.posts;
+				console.log( tumblr_posts );
+				$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs-video.php", function( data ) {
+					tumblr_video = JSON.parse(data).response.posts;
+					console.log( tumblr_video );
+					displayPosts();
+				});
+			});
 		});
 	});
 
 	function displayPosts(){
 		for(var i = 0; i < tweets.length; i++){
 			var d = new Date(tweets[i].created_at);
-			// var date = d.toLocaleDateString();
 			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
 			$('.grid').append('<a target="_blank" class="post tweet" href="https://twitter.com/sefrijn/status/'+tweets[i].id_str+'" data-date="'+date+'"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png">'+tweets[i].text+'</a>');		
 		}
-		for(var i = 0; i < posts.length; i++){
-			for(var j = 0; j < posts[i].photos.length; j++){
-				var d = new Date(posts[i].date);
+		for(var i = 0; i < insta.data.length; i++){
+			var d = new Date(insta.data[i].created_time * 1000);
+			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+			var text;
+			if(insta.data[i].caption != null){
+				text = insta.data[i].caption.text;
+			}else{
+				text = "";
+			}
+
+			$('.grid').append('<div class="post instagram" data-date="'+date+'" style="background-image:url(\''+insta.data[i].images.low_resolution.url+'\')"><a target="_blank" href="'+insta.data[i].link+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png"><span>'+text+'<span></a></div>');
+		}
+
+		for(var i = 0; i < tumblr_posts.length; i++){
+			for(var j = 0; j < tumblr_posts[i].photos.length; j++){
+				var d = new Date(tumblr_posts[i].date);
 				var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
-				if(Math.random() > 0.7 && posts[i].photos[j].alt_sizes[2].height > 350){
-					$('.grid').append('<div class="post tumblr tumblr-large" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
+				if(Math.random() > 0.5 && tumblr_posts[i].photos[j].alt_sizes[2].height > 350){
+					$('.grid').append('<div class="post tumblr tumblr-large" data-date="'+date+'" style="background-image:url(\''+tumblr_posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+tumblr_posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+tumblr_posts[i].tags[0]+'<span></a></div>');
 				}else{
-					if(posts[i].photos[j].alt_sizes[2].height <200){
-						$('.grid').append('<div class="post tumblr tumblr-wide" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
+					if(tumblr_posts[i].photos[j].alt_sizes[2].height <200){
+						$('.grid').append('<div class="post tumblr tumblr-wide" data-date="'+date+'" style="background-image:url(\''+tumblr_posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+tumblr_posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+tumblr_posts[i].tags[0]+'<span></a></div>');
 					}else{
-						$('.grid').append('<div class="post tumblr" data-date="'+date+'" style="background-image:url(\''+posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+posts[i].tags[0]+'<span></a></div>');
+						$('.grid').append('<div class="post tumblr" data-date="'+date+'" style="background-image:url(\''+tumblr_posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+tumblr_posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+tumblr_posts[i].tags[0]+'<span></a></div>');
 					}
 				}
 			}
 		}
-		$('.grid').fadeIn(1000).isotope({
+		for(var i = 0; i < tumblr_video.length; i++){
+			var d = new Date(tumblr_video[i].date);
+			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+			$('.grid').append('<div class="post tumblr tumblr-video tumblr-large" data-date="'+date+'">'+tumblr_video[i].player[1].embed_code+'</div>');
+		}
+
+
+
+		$('.loading').hide();
+		$('.grid').show().isotope({
 			itemSelector: '.post',
     	getSortData : {
         date : function ( $elem ) {
