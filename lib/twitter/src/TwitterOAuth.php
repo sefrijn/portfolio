@@ -282,10 +282,10 @@ class TwitterOAuth extends Config
         }
         fclose($media);
         // Finalize
-        $finalize = $this->http('POST', self::UPLOAD_HOST, 'media/upload', [
+        $finalize = $this->http('POST', self::UPLOAD_HOST, 'media/upload', array(
             'command' => 'FINALIZE',
             'media_id' => $init->media_id_string
-        ]);
+        ));
         return $finalize;
     }
 
