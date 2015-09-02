@@ -221,6 +221,11 @@ blockquote + p em{
 		}	
 	}
 }
+
+@keyframes rot {
+    50% { transform: scale(1.03); z-index:3; }
+}
+
 .inspiration{
 	#filter{
 		text-align: center;
@@ -255,6 +260,10 @@ blockquote + p em{
 			h3{
 				margin-top:56px;
 			}
+		}
+		.post:hover{
+			animation-name: rot;
+    		animation-duration: 0.5s;			
 		}
 	}
 	.tweet{

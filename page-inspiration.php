@@ -78,6 +78,9 @@
 			var text;
 			if(insta.data[i].caption != null){
 				text = insta.data[i].caption.text;
+				if(text.length > 30){
+					text = text.substring(0, 30);
+				}
 			}else{
 				text = "";
 			}
