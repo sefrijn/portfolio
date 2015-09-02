@@ -32,7 +32,7 @@
 			if($pages){ /* display the children content  */
 	  		foreach ($pages as $post) :
 	  			setup_postdata($post); ?>
-					<a class="post wordpress" data-date="<?php echo get_the_date("n/j/Y"); ?>" href="<?php the_permalink(); ?>">
+					<a class="post wordpress" data-date="<?php echo strtotime(get_the_date("n/j/Y")); ?>" href="<?php the_permalink(); ?>">
 		  			<?php if ( has_post_thumbnail() ) { ?>
 		  				<?php echo get_the_post_thumbnail( get_the_ID(), 'news-thumb'); ?>
 						<?php } ?>		
@@ -69,12 +69,12 @@
 	function displayPosts(){
 		for(var i = 0; i < tweets.length; i++){
 			var d = new Date(tweets[i].created_at);
-			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+			var date = Math.floor(d / 1000);
 			$('.grid').append('<a target="_blank" class="post tweet" href="https://twitter.com/sefrijn/status/'+tweets[i].id_str+'" data-date="'+date+'"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png">'+tweets[i].text+'</a>');		
 		}
 		for(var i = 0; i < insta.data.length; i++){
 			var d = new Date(insta.data[i].created_time * 1000);
-			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+			var date = Math.floor(d / 1000);
 			var text;
 			if(insta.data[i].caption != null){
 				text = insta.data[i].caption.text;
@@ -87,8 +87,9 @@
 
 		for(var i = 0; i < tumblr_posts.length; i++){
 			for(var j = 0; j < tumblr_posts[i].photos.length; j++){
-				var d = new Date(tumblr_posts[i].date);
-				var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+				var dString = tumblr_posts[i].date;
+				var d = new Date(dString.substring(0, dString.indexOf(' ')));
+				var date = Math.floor(d / 1000);
 				if(Math.random() > 0.5 && tumblr_posts[i].photos[j].alt_sizes[2].height > 350){
 					$('.grid').append('<div class="post tumblr tumblr-large" data-date="'+date+'" style="background-image:url(\''+tumblr_posts[i].photos[j].alt_sizes[2].url+'\')"><a target="_blank" href="'+tumblr_posts[i].post_url+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/tumblr.png"><span>'+tumblr_posts[i].tags[0]+'<span></a></div>');
 				}else{
@@ -101,29 +102,30 @@
 			}
 		}
 		for(var i = 0; i < tumblr_video.length; i++){
-			var d = new Date(tumblr_video[i].date);
-			var date = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+			var dString = tumblr_video[i].date;
+			var d = new Date(dString.substring(0, dString.indexOf(' ')));
+			var date = Math.floor(d / 1000);
 			$('.grid').append('<div class="post tumblr tumblr-video tumblr-large" data-date="'+date+'">'+tumblr_video[i].player[1].embed_code+'</div>');
 		}
 
 
 
 		$('.loading').hide();
-		$('.grid').show().isotope({
+		$('.grid').show(400).isotope({
 			itemSelector: '.post',
-    	getSortData : {
-        date : function ( $elem ) {
-        	var p = $elem;
-        	return new Date($(p).attr('data-date'));
-      	}
-      }, 
-      sortBy: 'date', 
-      sortAscending : false, 
+    		getSortData : {
+        		number : function ( $elem ) {
+        			var p = $elem;
+        			return parseInt($(p).attr('data-date'));
+      			}
+      		}, 
+      		sortBy: 'number', 
+      		sortAscending : false, 
 			layoutMode: 'masonry',
-		  masonry: {
-  		  columnWidth: 170, 
-	      isFitWidth: true
-  		}
+		  	masonry: {
+  		  		columnWidth: 170, 
+	    		isFitWidth: true
+  			}
 		});
 	}		
 
