@@ -84,8 +84,7 @@
 			}else{
 				text = "";
 			}
-
-			$('.grid').append('<div class="post instagram" data-date="'+date+'" style="background-image:url(\''+insta.data[i].images.low_resolution.url+'\')"><a target="_blank" href="'+insta.data[i].link+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png"><span>'+text+'<span></a></div>');
+			$('.grid').append('<div class="post instagram" data-date="'+date+'" style="background-image:url(\''+insta.data[i].images.thumbnail.url+'\')"><a target="_blank" href="'+insta.data[i].link+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png"><span>'+text+'<span></a></div>');
 		}
 
 		for(var i = 0; i < tumblr_posts.length; i++){
