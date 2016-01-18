@@ -201,6 +201,48 @@ blockquote + p em{
 		}
 	}
 }
+
+#page #photos{
+	width:100%;
+	overflow:scroll;
+	#photosContainer{
+		position:relative;
+		margin:0px 10%;
+		padding-left:330px;
+		width: auto;
+		white-space:nowrap;
+		vertical-align: top;
+   		.photo{
+			padding:20px;
+			display: inline-block;
+			margin-right:140px;
+			// float:left;
+			text-align: center;
+			margin-bottom:50px;
+			font-weight: normal;
+			&:hover{
+				background-color: #ebebeb;
+			}
+			img{
+				height: 427px;
+				width:auto;
+			}
+		}
+		.first{
+			position:absolute;
+			top:0px;
+			left:0px;
+			white-space:normal;
+			text-align: left;
+			width:250px;
+			margin-right:80px;
+			&:hover{
+				background-color: transparent;
+			}
+		}
+
+	}
+}
 .cv{
 	h3{
 		margin-left:150px !important;

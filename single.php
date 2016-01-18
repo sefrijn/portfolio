@@ -34,6 +34,13 @@
 			<section class="spacer"></section>
 			<?php } ?>
 
+			<script>
+				$( document ).ready(function() {
+					$('.navigation ul li:nth-of-type(4)').addClass('current-menu-item');
+				});
+			</script>
+
+
 			<section class="wrapper">
 				<div class="container">
 					<?php the_content(); ?>

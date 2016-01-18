@@ -293,12 +293,59 @@ blockquote + p em {
 }
 
 /* line 205, ../sass/screen.scss */
+#page #photos {
+  width: 100%;
+  overflow: scroll;
+}
+/* line 208, ../sass/screen.scss */
+#page #photos #photosContainer {
+  position: relative;
+  margin: 0px 10%;
+  padding-left: 330px;
+  width: auto;
+  white-space: nowrap;
+  vertical-align: top;
+}
+/* line 215, ../sass/screen.scss */
+#page #photos #photosContainer .photo {
+  padding: 20px;
+  display: inline-block;
+  margin-right: 140px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: normal;
+}
+/* line 223, ../sass/screen.scss */
+#page #photos #photosContainer .photo:hover {
+  background-color: #ebebeb;
+}
+/* line 226, ../sass/screen.scss */
+#page #photos #photosContainer .photo img {
+  height: 427px;
+  width: auto;
+}
+/* line 231, ../sass/screen.scss */
+#page #photos #photosContainer .first {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  white-space: normal;
+  text-align: left;
+  width: 250px;
+  margin-right: 80px;
+}
+/* line 239, ../sass/screen.scss */
+#page #photos #photosContainer .first:hover {
+  background-color: transparent;
+}
+
+/* line 247, ../sass/screen.scss */
 .cv h3 {
   margin-left: 150px !important;
   padding: 0px !important;
   float: left;
 }
-/* line 210, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 .cv p {
   padding-left: 420px !important;
   text-transform: uppercase;
@@ -306,11 +353,11 @@ blockquote + p em {
   letter-spacing: 2px;
   color: #aaaaaa;
 }
-/* line 217, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .cv ul {
   padding-left: 420px !important;
 }
-/* line 219, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .cv ul li {
   margin: 6px 0px;
 }
@@ -321,55 +368,55 @@ blockquote + p em {
     z-index: 3;
   }
 }
-/* line 230, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .inspiration #filter {
   text-align: center;
   margin: 0px auto;
   width: 960px;
 }
-/* line 234, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 .inspiration #filter li {
   display: inline-block;
   padding: 10px;
   border: 1px solid #ffffff;
 }
-/* line 238, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 .inspiration #filter li:hover {
   cursor: pointer;
   border-color: #eeeeee;
 }
-/* line 243, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 .inspiration #filter li.active {
   text-decoration: underline;
 }
-/* line 248, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 .inspiration .loading {
   margin-top: 150px;
   margin-bottom: 150px;
 }
-/* line 251, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .inspiration .loading p {
   text-align: center;
 }
-/* line 255, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .inspiration .grid {
   margin: 0px auto;
   display: none;
 }
-/* line 258, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 .inspiration .grid .wordpress {
   height: 470px;
 }
-/* line 260, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 .inspiration .grid .wordpress h3 {
   margin-top: 56px;
 }
-/* line 264, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 .inspiration .grid .post:hover {
   animation-name: rot;
   animation-duration: 0.5s;
 }
-/* line 269, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .inspiration .tweet {
   width: 300px !important;
   height: 130px !important;
@@ -378,14 +425,14 @@ blockquote + p em {
   font-weight: 400 !important;
   line-height: 26px;
 }
-/* line 281, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 .inspiration .tweet img {
   display: block;
   margin-right: 10px;
   margin-bottom: 10px;
   opacity: 0.1;
 }
-/* line 288, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 .inspiration .tumblr {
   width: 130px !important;
   height: 130px !important;
@@ -398,15 +445,15 @@ blockquote + p em {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 299, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .inspiration .tumblr:hover {
   border-color: #ebebeb;
 }
-/* line 301, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .inspiration .tumblr:hover a {
   opacity: 1;
 }
-/* line 305, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 .inspiration .tumblr img {
   position: absolute;
   top: 50%;
@@ -414,7 +461,7 @@ blockquote + p em {
   left: 50%;
   margin-left: -8px;
 }
-/* line 312, ../sass/screen.scss */
+/* line 354, ../sass/screen.scss */
 .inspiration .tumblr a {
   display: block;
   width: 100%;
@@ -424,7 +471,7 @@ blockquote + p em {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 320, ../sass/screen.scss */
+/* line 362, ../sass/screen.scss */
 .inspiration .tumblr a span {
   width: 100%;
   left: 0;
@@ -439,25 +486,25 @@ blockquote + p em {
   letter-spacing: 2px;
   line-height: 20px;
 }
-/* line 336, ../sass/screen.scss */
+/* line 378, ../sass/screen.scss */
 .inspiration .tumblr-wide {
   width: 300px !important;
 }
-/* line 339, ../sass/screen.scss */
+/* line 381, ../sass/screen.scss */
 .inspiration .tumblr-large {
   width: 300px !important;
   height: 300px !important;
 }
-/* line 344, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 .inspiration .tumblr-video {
   width: 470px !important;
 }
-/* line 346, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 .inspiration .tumblr-video iframe {
   height: 300px;
   width: 470px;
 }
-/* line 352, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 .inspiration .instagram {
   width: 130px !important;
   height: 130px !important;
@@ -470,15 +517,15 @@ blockquote + p em {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 363, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .inspiration .instagram:hover {
   border-color: #ebebeb;
 }
-/* line 365, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 .inspiration .instagram:hover a {
   opacity: 1;
 }
-/* line 369, ../sass/screen.scss */
+/* line 411, ../sass/screen.scss */
 .inspiration .instagram img {
   position: absolute;
   top: 50%;
@@ -486,7 +533,7 @@ blockquote + p em {
   left: 50%;
   margin-left: -8px;
 }
-/* line 376, ../sass/screen.scss */
+/* line 418, ../sass/screen.scss */
 .inspiration .instagram a {
   display: block;
   width: 100%;
@@ -496,7 +543,7 @@ blockquote + p em {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 384, ../sass/screen.scss */
+/* line 426, ../sass/screen.scss */
 .inspiration .instagram a span {
   width: 70%;
   left: 15%;
@@ -512,7 +559,7 @@ blockquote + p em {
   line-height: 20px;
 }
 
-/* line 404, ../sass/screen.scss */
+/* line 446, ../sass/screen.scss */
 hr {
   clear: both;
   border: none;
@@ -520,7 +567,7 @@ hr {
   margin-bottom: 25px;
 }
 
-/* line 410, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 .wp-caption-text {
   padding: 0px !important;
   width: 470px;
@@ -536,7 +583,7 @@ hr {
   line-height: 20px;
 }
 
-/* line 424, ../sass/screen.scss */
+/* line 466, ../sass/screen.scss */
 .alignleft {
   background-color: #000000;
   position: relative;
@@ -545,14 +592,14 @@ hr {
   margin-right: 10px;
   margin-bottom: 20px;
 }
-/* line 431, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 .alignleft img {
   width: 470px;
   height: auto;
   margin-bottom: -5px;
 }
 
-/* line 437, ../sass/screen.scss */
+/* line 479, ../sass/screen.scss */
 .alignright {
   display: inline-block;
   background-color: #000000;
@@ -562,26 +609,26 @@ hr {
   margin-left: 10px;
   margin-bottom: 20px;
 }
-/* line 445, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 .alignright img {
   width: 470px;
   height: auto;
   margin-bottom: -5px;
 }
 
-/* line 451, ../sass/screen.scss */
+/* line 493, ../sass/screen.scss */
 .alignnone {
   width: 960px;
   height: auto;
   margin: 8px 0px;
 }
 
-/* line 457, ../sass/screen.scss */
+/* line 499, ../sass/screen.scss */
 .scroll_down {
   position: relative;
 }
 
-/* line 460, ../sass/screen.scss */
+/* line 502, ../sass/screen.scss */
 .scroll_down:hover {
   /* Chrome, Safari, Opera */
   -webkit-animation-name: myfirst;
@@ -613,7 +660,7 @@ hr {
     top: 5px;
   }
 }
-/* line 489, ../sass/screen.scss */
+/* line 531, ../sass/screen.scss */
 footer {
   padding: 40px;
   text-transform: uppercase;
@@ -623,7 +670,7 @@ footer {
   text-align: center;
 }
 
-/* line 499, ../sass/screen.scss */
+/* line 541, ../sass/screen.scss */
 #attachment_86 {
   margin-right: 30px;
 }
