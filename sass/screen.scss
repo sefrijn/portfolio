@@ -204,7 +204,8 @@ blockquote + p em{
 
 #page #photos{
 	width:100%;
-	overflow:scroll;
+	overflow-x:scroll;
+	position:relative;
 	#photosContainer{
 		position:relative;
 		margin:0px 10%;
@@ -501,14 +502,14 @@ hr{
 }
 .scroll_down:hover{
    	/* Chrome, Safari, Opera */
-    -webkit-animation-name: myfirst;
+    -webkit-animation-name: animateDown;
     -webkit-animation-duration: 0.3s;
     // -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     // -webkit-animation-play-state: running;
     /* Standard syntax */
-    animation-name: myfirst;
+    animation-name: animateDown;
     animation-duration: 0.3s;
     // animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -517,15 +518,66 @@ hr{
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst {
+@-webkit-keyframes animateDown {
     from {top: 0px;}
     to {top: 5px;}
 }
 
 /* Standard syntax */
-@keyframes myfirst {
+@keyframes animateDown {
     from {top: 0px;}
     to {top: 5px;}
+}
+
+.scroll_right{
+	display:block;
+	position:fixed;
+	right:0px;
+	top:270px;
+	height:42px;
+	width:100px;
+	padding:15px;
+	padding-right:0;
+	img{
+		float:right;
+		margin-top:0;
+		margin-right:7px;
+	}
+	p{
+		float:left;
+		text-transform: uppercase;
+		width:70px;
+		margin-top:3px;
+		margin-bottom:0;
+	}
+}
+
+.scroll_right:hover{
+	background-color:rgba(#ebebeb,0.9);
+	img{
+	   	/* Chrome, Safari, Opera */
+	    -webkit-animation-name: animateRight;
+	    -webkit-animation-duration: 0.3s;
+	    -webkit-animation-iteration-count: infinite;
+	    -webkit-animation-direction: alternate;
+	    /* Standard syntax */
+	    animation-name: animateRight;
+	    animation-duration: 0.3s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes animateRight {
+    from {margin-right: 7px;}
+    to {margin-right: 2px;}
+}
+
+/* Standard syntax */
+@keyframes animateRight {
+    from {margin-right: 7px;}
+    to {margin-right: 2px;}
 }
 
 footer{

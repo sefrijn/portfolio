@@ -24,7 +24,7 @@ $(document).ready(function(){
 		var p = photos.photos.photo[i];
 		var url = "https://farm"+p.farm+".staticflickr.com/"+p.server+"/"+p.id+"_"+p.secret+"_z.jpg";
 		console.log(url);
-		$("#photosContainer").append('<a class="photo" href="https://www.flickr.com/photos/sefrijn/'+p.id+'/in/photostream/"><img src="'+url+'"><p>'+p.title+'</p></a>');
+		$("#photosContainer").append('<a class="photo" title="View on Flickr.com" href="https://www.flickr.com/photos/sefrijn/'+p.id+'/in/photostream/"><img src="'+url+'"><p>'+p.title+'</p></a>');
 
 	}	
 });
@@ -46,6 +46,11 @@ $(document).ready(function(){
 				<?php endif; ?>
 			</div>
 		</div>
+		<div href="#" class="scroll_right">
+			<img class="round" src="<?php echo get_template_directory_uri() ?>/img/arrow_right.png" alt="">
+			<p class="subtitle">scroll right</p>
+		</div>
 	</section>
 </div>
+
 <?php get_footer() ?>
