@@ -14,7 +14,7 @@
 			<li data-filter="wordpress">Sefrijn.nl</li>
 			<li data-filter="tumblr">Tumblr</li>
 			<li data-filter="tweet">Twitter</li>
-			<li data-filter="instagram">Instagram</li>
+			<!-- <li data-filter="instagram">Instagram</li> -->
 		</ul>
 	</div>
 	<div class="loading">
@@ -51,9 +51,9 @@
 	$.get( "<?php echo get_template_directory_uri(); ?>/tweets.php", function( data ) {
 		tweets = JSON.parse(data);
 		console.log( tweets );
-		$.get( "<?php echo get_template_directory_uri(); ?>/instagrams.php", function( data ) {
-			insta = JSON.parse(data);
-			console.log( insta );
+		// $.get( "<?php echo get_template_directory_uri(); ?>/instagrams.php", function( data ) {
+			// insta = JSON.parse(data);
+			// console.log( insta );
 			$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs.php", function( data ) {
 				tumblr_posts = JSON.parse(data).response.posts;
 				console.log( tumblr_posts );
@@ -63,29 +63,30 @@
 					displayPosts();
 				});
 			});
-		});
+		// });
 	});
 
 	function displayPosts(){
+		$('footer').hide();
 		for(var i = 0; i < tweets.length; i++){
 			var d = new Date(tweets[i].created_at);
 			var date = Math.floor(d / 1000);
 			$('.grid').append('<a target="_blank" class="post tweet" href="https://twitter.com/sefrijn/status/'+tweets[i].id_str+'" data-date="'+date+'"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png">'+tweets[i].text+'</a>');		
 		}
-		for(var i = 0; i < insta.data.length; i++){
-			var d = new Date(insta.data[i].created_time * 1000);
-			var date = Math.floor(d / 1000);
-			var text;
-			if(insta.data[i].caption != null){
-				text = insta.data[i].caption.text;
-				if(text.length > 30){
-					text = text.substring(0, 30);
-				}
-			}else{
-				text = "";
-			}
-			$('.grid').append('<div class="post instagram" data-date="'+date+'" style="background-image:url(\''+insta.data[i].images.thumbnail.url+'\')"><a target="_blank" href="'+insta.data[i].link+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png"><span>'+text+'<span></a></div>');
-		}
+		// for(var i = 0; i < insta.data.length; i++){
+		// 	var d = new Date(insta.data[i].created_time * 1000);
+		// 	var date = Math.floor(d / 1000);
+		// 	var text;
+		// 	if(insta.data[i].caption != null){
+		// 		text = insta.data[i].caption.text;
+		// 		if(text.length > 30){
+		// 			text = text.substring(0, 30);
+		// 		}
+		// 	}else{
+		// 		text = "";
+		// 	}
+		// 	$('.grid').append('<div class="post instagram" data-date="'+date+'" style="background-image:url(\''+insta.data[i].images.thumbnail.url+'\')"><a target="_blank" href="'+insta.data[i].link+'" class="hover"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png"><span>'+text+'<span></a></div>');
+		// }
 
 		for(var i = 0; i < tumblr_posts.length; i++){
 			for(var j = 0; j < tumblr_posts[i].photos.length; j++){
