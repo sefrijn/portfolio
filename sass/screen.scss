@@ -216,7 +216,7 @@ blockquote + p em{
    		.photo{
 			padding:20px;
 			display: inline-block;
-			margin-right:140px;
+			margin-right:50px;
 			// float:left;
 			text-align: center;
 			margin-bottom:50px;
@@ -554,6 +554,7 @@ hr{
 
 .scroll_right:hover{
 	background-color:rgba(#ebebeb,0.9);
+	cursor:default;
 	img{
 	   	/* Chrome, Safari, Opera */
 	    -webkit-animation-name: animateRight;
@@ -566,6 +567,10 @@ hr{
 	    animation-iteration-count: infinite;
 	    animation-direction: alternate;
 	}
+}
+
+.scroll_right-hover{
+	background-color:rgba(#ebebeb,0.9);	
 }
 
 /* Chrome, Safari, Opera */

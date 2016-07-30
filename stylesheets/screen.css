@@ -311,7 +311,7 @@ blockquote + p em {
 #page #photos #photosContainer .photo {
   padding: 20px;
   display: inline-block;
-  margin-right: 140px;
+  margin-right: 50px;
   text-align: center;
   margin-bottom: 50px;
   font-weight: normal;
@@ -690,8 +690,9 @@ hr {
 /* line 555, ../sass/screen.scss */
 .scroll_right:hover {
   background-color: rgba(235, 235, 235, 0.9);
+  cursor: default;
 }
-/* line 557, ../sass/screen.scss */
+/* line 558, ../sass/screen.scss */
 .scroll_right:hover img {
   /* Chrome, Safari, Opera */
   -webkit-animation-name: animateRight;
@@ -703,6 +704,11 @@ hr {
   animation-duration: 0.3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+/* line 572, ../sass/screen.scss */
+.scroll_right-hover {
+  background-color: rgba(235, 235, 235, 0.9);
 }
 
 /* Chrome, Safari, Opera */
@@ -723,7 +729,7 @@ hr {
     margin-right: 2px;
   }
 }
-/* line 583, ../sass/screen.scss */
+/* line 588, ../sass/screen.scss */
 footer {
   padding: 40px;
   text-transform: uppercase;
@@ -733,7 +739,7 @@ footer {
   text-align: center;
 }
 
-/* line 593, ../sass/screen.scss */
+/* line 598, ../sass/screen.scss */
 #attachment_86 {
   margin-right: 30px;
 }

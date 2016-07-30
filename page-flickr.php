@@ -17,6 +17,10 @@
 $(document).ready(function(){
 	$('.navigation ul li:first-of-type').addClass('current-menu-item');
 
+	$('.scroll_right-hover').mouseenter(function(){
+		$(this).removeClass('scroll_right-hover');
+	})
+
 	var photos = <?php echo $recent;?>;
 	console.log(photos.photos);
 	console.log("Lengte: "+photos.photos.photo.length);
@@ -46,7 +50,7 @@ $(document).ready(function(){
 				<?php endif; ?>
 			</div>
 		</div>
-		<div href="#" class="scroll_right">
+		<div href="#" class="scroll_right scroll_right-hover">
 			<img class="round" src="<?php echo get_template_directory_uri() ?>/img/arrow_right.png" alt="">
 			<p class="subtitle">scroll right</p>
 		</div>
