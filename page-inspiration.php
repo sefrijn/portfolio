@@ -10,8 +10,8 @@
 <div class="page inspiration">
 	<div id="filter">
 		<ul class="subtitle">
-			<li class="active" data-filter="all">All</li>
-			<li data-filter="wordpress">Sefrijn.nl</li>
+			<li data-filter="all">All</li>
+			<li data-filter="blog">Blog</li>
 			<li data-filter="tumblr">Tumblr</li>
 			<li data-filter="tweet">Twitter</li>
 			<!-- <li data-filter="instagram">Instagram</li> -->
@@ -32,7 +32,7 @@
 			if($pages){ /* display the children content  */
 	  		foreach ($pages as $post) :
 	  			setup_postdata($post); ?>
-					<a class="post wordpress" data-date="<?php echo strtotime(get_the_date("n/j/Y")); ?>" href="<?php the_permalink(); ?>">
+					<a class="post blog" data-date="<?php echo strtotime(get_the_date("n/j/Y")); ?>" href="<?php the_permalink(); ?>">
 		  			<?php if ( has_post_thumbnail() ) { ?>
 		  				<?php echo get_the_post_thumbnail( get_the_ID(), 'news-thumb'); ?>
 						<?php } ?>		
@@ -114,7 +114,27 @@
 
 
 		$('.loading').hide();
-		$('.grid').show(400).isotope({
+
+
+
+		// Get selected part of site
+		var sel = '';
+		sel = window.location.hash.substr(1);
+		if(sel!= ''){
+			$('#filter li').removeClass('active');
+			$('#filter li').each(function( index ) {
+				if($(this).text().toUpperCase() === sel.toUpperCase()){
+					$(this).addClass('active');
+				}				
+				$('.post').hide();
+				var selClass = '.'+sel;
+				$(selClass).show();
+			});
+		}else{
+			$('#filter li:first-of-type').addClass('active');
+		}
+
+		$('.grid').isotope({
 			itemSelector: '.post',
     		getSortData : {
         		number : function ( $elem ) {
@@ -130,6 +150,7 @@
 	    		isFitWidth: true
   			}
 		});
+		$('.grid').show(400);	
 	}		
 
 	</script>

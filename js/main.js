@@ -7,7 +7,13 @@ $( document ).ready(function() {
 	});
 
 	$('#filter li').click(function(){
-		var selected = "."+$(this).attr('data-filter');
+		var selected = $(this).attr('data-filter');
+		if(selected!='all'){
+			history.pushState(null, null, '#'+selected);
+		}else{
+			history.pushState(null, null, '/inspiration/');
+		}
+		selected = "."+selected;
 		$('#filter li').removeClass('active');
 		$(this).addClass('active');
 		if(selected != ".all"){	
