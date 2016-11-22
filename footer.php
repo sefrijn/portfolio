@@ -1,5 +1,5 @@
 <footer>
-&copy; Sefrijn 2015
+&copy; Sefrijn <?php echo date('Y'); ?>
 </footer>
 <?php wp_footer(); ?>
 </body>
