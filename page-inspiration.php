@@ -48,23 +48,73 @@
 	var tumblr_posts;
 	var tumblr_video;
 	var insta;
-	$.get( "<?php echo get_template_directory_uri(); ?>/tweets.php", function( data ) {
-		tweets = JSON.parse(data);
-		console.log( tweets );
-		$.get( "<?php echo get_template_directory_uri(); ?>/instagrams.php", function( data ) {
-			insta = JSON.parse(data);
-			console.log( insta );
-			$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs.php", function( data ) {
-				tumblr_posts = JSON.parse(data).response.posts;
-				console.log( tumblr_posts );
-				$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs-video.php", function( data ) {
-					tumblr_video = JSON.parse(data).response.posts;
-					console.log( tumblr_video );
-					displayPosts();
-				});
-			});
-		});
-	});
+$.ajax({
+    url: "<?php echo get_template_directory_uri(); ?>/tweets.php", 
+    type: "GET",             
+    dataType: 'json',
+    cache: false,
+    success: function(data)
+    {
+		tweets = data;
+		console.log( data );
+		$.ajax({
+		    url: "<?php echo get_template_directory_uri(); ?>/instagrams.php", 
+		    type: "GET",
+		    dataType: 'json',
+		    cache: false,
+		    success: function(data)
+		    {
+				insta = data;
+				console.log( data );
+				$.ajax({
+				    url: "<?php echo get_template_directory_uri(); ?>/tumblrs.php", 
+				    type: "GET",
+				    dataType: 'json',
+				    cache: false,
+				    success: function(data)
+				    {
+						tumblr_posts = data;
+						console.log( data );
+
+						$.ajax({
+						    url: "<?php echo get_template_directory_uri(); ?>/tumblrs-video.php", 
+						    type: "GET",
+						    dataType: 'json',
+						    cache: false,
+						    success: function(data)
+						    {
+								tumblr_video = data;
+								console.log( data );
+								displayPosts();
+						    }
+						});							
+				    }
+				});	
+
+		    }
+		});	
+
+    }
+});
+
+
+	// $.get( "<?php echo get_template_directory_uri(); ?>/tweets.php", function( data ) {
+	// 	tweets = JSON.parse(data);
+	// 	console.log( tweets );
+	// 	$.get( "<?php echo get_template_directory_uri(); ?>/instagrams.php", function( data ) {
+	// 		insta = JSON.parse(data);
+	// 		console.log( insta );
+	// 		$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs.php", function( data ) {
+	// 			tumblr_posts = JSON.parse(data).response.posts;
+	// 			console.log( tumblr_posts );
+	// 			$.get( "<?php echo get_template_directory_uri(); ?>/tumblrs-video.php", function( data ) {
+	// 				tumblr_video = JSON.parse(data).response.posts;
+	// 				console.log( tumblr_video );
+	// 				displayPosts();
+	// 			});
+	// 		});
+	// 	});
+	// });
 
 	function displayPosts(){
 		$('footer').hide();
