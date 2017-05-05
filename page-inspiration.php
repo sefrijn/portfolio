@@ -73,7 +73,7 @@ $.ajax({
 				    cache: false,
 				    success: function(data)
 				    {
-						tumblr_posts = data;
+						tumblr_posts = data.response.posts;
 						console.log( data );
 
 						$.ajax({
@@ -83,7 +83,7 @@ $.ajax({
 						    cache: false,
 						    success: function(data)
 						    {
-								tumblr_video = data;
+								tumblr_video = data.response.posts;
 								console.log( data );
 								displayPosts();
 						    }
