@@ -6,6 +6,6 @@
 	$content = $client->get("/blog/modderpoel.tumblr.com/posts", array("type" => "video", "limit" => 10));
 	$content = json_encode($content);
 
-	echo($content);
+	print_r($content);
 
 ?>

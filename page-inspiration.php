@@ -52,7 +52,6 @@ $.ajax({
     url: "<?php echo get_template_directory_uri(); ?>/tweets.php", 
     type: "GET",             
     dataType: 'json',
-    cache: false,
     success: function(data)
     {
 		tweets = data;
@@ -61,7 +60,6 @@ $.ajax({
 		    url: "<?php echo get_template_directory_uri(); ?>/instagrams.php", 
 		    type: "GET",
 		    dataType: 'json',
-		    cache: false,
 		    success: function(data)
 		    {
 				insta = data;
@@ -70,17 +68,14 @@ $.ajax({
 				    url: "<?php echo get_template_directory_uri(); ?>/tumblrs.php", 
 				    type: "GET",
 				    dataType: 'json',
-				    cache: false,
 				    success: function(data)
 				    {
 						tumblr_posts = data.response.posts;
 						console.log( data );
-
 						$.ajax({
 						    url: "<?php echo get_template_directory_uri(); ?>/tumblrs-video.php", 
 						    type: "GET",
 						    dataType: 'json',
-						    cache: false,
 						    success: function(data)
 						    {
 								tumblr_video = data.response.posts;

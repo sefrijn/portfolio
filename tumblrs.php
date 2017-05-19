@@ -7,6 +7,5 @@
 
 	$content = json_encode($content);
 
-	echo($content);
-
+	print_r($content);
 ?>
