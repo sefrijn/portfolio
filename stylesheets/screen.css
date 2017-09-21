@@ -75,17 +75,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @font-face {
   font-family: 'Josefin Sans';
-  src: url("fonts/JosefinSans-Light.ttf");
+  src: url("../fonts/JosefinSans-Light.ttf");
   font-weight: 300;
 }
 @font-face {
   font-family: 'Josefin Sans';
-  src: url("fonts/JosefinSans-Regular.ttf");
+  src: url("../fonts/JosefinSans-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: 'Josefin Sans';
-  src: url("fonts/JosefinSans-Bold.ttf");
+  src: url("../fonts/JosefinSans-Bold.ttf");
   font-weight: 700;
 }
 /* line 35, ../sass/screen.scss */
