@@ -43,7 +43,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js"></script>
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
 	<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,700" rel="stylesheet"> -->
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<link rel="image_src" href="<?php echo get_template_directory_uri(); ?>/img/sefrijn_square.png" />
 
